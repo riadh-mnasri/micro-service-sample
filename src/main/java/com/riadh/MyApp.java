@@ -26,9 +26,9 @@ import java.util.Collection;
 @EnableAutoConfiguration(exclude = { MetricFilterAutoConfiguration.class, MetricRepositoryAutoConfiguration.class })
 @EnableConfigurationProperties({ JHipsterProperties.class, LiquibaseProperties.class })
 @EnableEurekaClient
-public class MyappApp {
+public class MyApp {
 
-    private static final Logger log = LoggerFactory.getLogger(MyappApp.class);
+    private static final Logger log = LoggerFactory.getLogger(MyApp.class);
 
     @Inject
     private Environment env;
@@ -65,7 +65,7 @@ public class MyappApp {
      * @throws UnknownHostException if the local host name could not be resolved into an address
      */
     public static void main(String[] args) throws UnknownHostException {
-        SpringApplication app = new SpringApplication(MyappApp.class);
+        SpringApplication app = new SpringApplication(MyApp.class);
         SimpleCommandLinePropertySource source = new SimpleCommandLinePropertySource(args);
         addDefaultProfile(app, source);
         Environment env = app.run(args).getEnvironment();
